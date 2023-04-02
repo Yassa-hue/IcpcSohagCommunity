@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'about_us/index', as: 'about_us'
   resources :tasks
   resources :contests
   resources :weeks

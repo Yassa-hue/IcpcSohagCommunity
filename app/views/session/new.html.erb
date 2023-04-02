@@ -1,5 +1,6 @@
 
 <h1>Login</h1>
+<% puts flash[:alert] if flash[:alert] %>
 <%= form_with url: session_create_path, local: true do |f| %>
   <div>
     <%= f.label :email %>

@@ -8,7 +8,8 @@ class SessionController < ApplicationController
     user = User.find_by(email: login_params[:email])
 
     if user && user.authenticate(login_params[:password])
-      session[:user] = user
+      session[:user_id] = user.id
+      session[:user_role] = user.role
       redirect_to root_path
     else
       render new

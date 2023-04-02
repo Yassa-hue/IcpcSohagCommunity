@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root to: 'posts#index'
+
+  resources :posts
   get    '/login',  to: 'session#new',     as: 'login'
   post   '/login',  to: 'session#create',  as: 'session_create'
   delete '/logout', to: 'session#destroy', as: 'logout'

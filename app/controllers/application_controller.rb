@@ -6,12 +6,12 @@ class ApplicationController < ActionController::Base
   end
 
   def is_coach?
-    logged_in? && session[:user].role == :coach
+    logged_in? && session[:user_role] == "Coach"
   end
 
 
   def is_board?
-    logged_in? && session[:user].role == :board
+    logged_in? && session[:user_role] == "Board"
   end
 
 end

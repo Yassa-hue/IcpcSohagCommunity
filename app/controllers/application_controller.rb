@@ -1,6 +1,13 @@
 class ApplicationController < ActionController::Base
-  helper_method :logged_in?, :is_board?
+  helper_method :logged_in?, :is_board?, :current_user_id, :current_user_name
 
+  def current_user_name
+    session[:user_name]
+  end
+
+  def current_user_id
+    session[:user_id]
+  end
 
   def logged_in?
     !!session[:user_id]

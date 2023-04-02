@@ -40,6 +40,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.0.4.3, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.0.4.3, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.8.2, ruby-3.2.1-p31) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.18, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.16.0, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, ruby-3.2.1-p31) [gem]" level="application" />

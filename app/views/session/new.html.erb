@@ -1,0 +1,15 @@
+
+<h1>Login</h1>
+<%= form_with url: session_create_path, local: true do |f| %>
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email, autocomplete: "email" %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+  <div>
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>

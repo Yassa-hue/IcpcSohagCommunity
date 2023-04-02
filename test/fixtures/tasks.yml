@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  todo: MyText
+  deadline: 2023-04-02 15:37:42
+  coach: one
+  trainee: one
+
+two:
+  todo: MyText
+  deadline: 2023-04-02 15:37:42
+  coach: two
+  trainee: two

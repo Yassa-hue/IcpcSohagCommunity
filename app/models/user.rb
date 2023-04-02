@@ -9,4 +9,7 @@ class User < ApplicationRecord
 
   # Board only can create contests
   has_many :contests
+
+
+  has_many :tasks
 end

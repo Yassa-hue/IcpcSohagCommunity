@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_02_125352) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_02_133742) do
   create_table "contests", force: :cascade do |t|
     t.string "name"
     t.string "link"
@@ -28,6 +28,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_125352) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.text "todo"
+    t.datetime "deadline"
+    t.integer "coach_id", null: false
+    t.integer "trainee_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coach_id"], name: "index_tasks_on_coach_id"
+    t.index ["trainee_id"], name: "index_tasks_on_trainee_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,5 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_125352) do
 
   add_foreign_key "contests", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "tasks", "users", column: "coach_id"
+  add_foreign_key "tasks", "users", column: "trainee_id"
   add_foreign_key "weeks", "users"
 end

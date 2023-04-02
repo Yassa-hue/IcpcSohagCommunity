@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
 
+  # No one is allowed to deal with the users unless they logged in
+  before_action :require_login, all: true
+
+  # No edit unless you are a board
+  before_action :require_board, %i[ new create edit update destroy ]
+
   # GET /users or /users.json
   def index
     @users = User.all

@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   # Board only can create weeks
   has_many :weeks
+
+  # Board only can create contests
+  has_many :contests
 end

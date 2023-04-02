@@ -11,6 +11,16 @@
   </head>
 
   <body>
+  <header>
+    <%= link_to "Home", posts_path %>
+    <% if logged_in? %>
+      <%= link_to "Weeks", weeks_path %>
+      <%= link_to "Contests", contests_path %>
+      <%= link_to "Logout", logout_path, method: :delete %>
+    <% else %>
+      <%= link_to "Login", login_path %>
+    <% end %>
+  </header>
     <%= yield %>
   </body>
 </html>

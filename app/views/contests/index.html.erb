@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Contests</h1>
+
+<div id="contests">
+  <% @contests.each do |contest| %>
+    <%= render contest %>
+    <p>
+      <%= link_to "Show this contest", contest %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New contest", new_contest_path %>

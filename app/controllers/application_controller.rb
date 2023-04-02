@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :logged_in?
+  helper_method :logged_in?, :is_board?
 
   def logged_in?
     !!session[:user_id]

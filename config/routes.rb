@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contests
   resources :weeks
   root to: 'posts#index'
 

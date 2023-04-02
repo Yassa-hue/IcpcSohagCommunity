@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_02_102857) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_02_125352) do
+  create_table "contests", force: :cascade do |t|
+    t.string "name"
+    t.string "link"
+    t.datetime "start_at"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_contests_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -42,6 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_102857) do
     t.index ["user_id"], name: "index_weeks_on_user_id"
   end
 
+  add_foreign_key "contests", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "weeks", "users"
 end

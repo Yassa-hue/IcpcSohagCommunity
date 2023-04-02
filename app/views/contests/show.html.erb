@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @contest %>
+
+<div>
+  <%= link_to "Back to contests", contests_path %>
+
+  <% if is_board? %>
+  | <%= link_to "Edit this contest", edit_contest_path(@contest) %>
+  <%= button_to "Destroy this contest", @contest, method: :delete %>
+  <% end %>
+</div>

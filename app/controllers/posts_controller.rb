@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :require_board, only: %i[ new create edit pdate destroy ]
+  before_action :require_board, only: %i[ new create edit update destroy ]
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.limit 2
   end
 
   # GET /posts/1 or /posts/1.json
@@ -23,8 +23,8 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     new_post_params = post_params
-    new_post_params[:user_id] = session[:user].id
-    @post = Post.new(post_params)
+    new_post_params[:user_id] = session[:user_id]
+    @post = Post.new(new_post_params)
 
     respond_to do |format|
       if @post.save
@@ -71,11 +71,4 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :content)
     end
 
-
-    def require_board
-      unless is_board?
-        flash[:alert] = "You don't have permission to create, edit or destroy posts."
-        redirect_to login_path
-      end
-    end
 end

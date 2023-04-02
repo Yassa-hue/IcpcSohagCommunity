@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @week %>
+
+<div>
+  <%= link_to "Edit this week", edit_week_path(@week) %> |
+  <%= link_to "Back to weeks", weeks_path %>
+
+  <%= button_to "Destroy this week", @week, method: :delete %>
+</div>

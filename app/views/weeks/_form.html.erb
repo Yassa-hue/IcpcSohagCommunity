@@ -1,0 +1,32 @@
+<%= form_with(model: week) do |form| %>
+  <% if week.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(week.errors.count, "error") %> prohibited this week from being saved:</h2>
+
+      <ul>
+        <% week.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :materials, style: "display: block" %>
+    <%= form.text_area :materials %>
+  </div>
+
+  <div>
+    <%= form.label :sheet, style: "display: block" %>
+    <%= form.text_field :sheet %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

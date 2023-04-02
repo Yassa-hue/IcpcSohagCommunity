@@ -2,6 +2,11 @@
 
 <h1>Contests</h1>
 
+
+<% if is_board? %>
+  <%= link_to "New contest", new_contest_path %>
+<% end %>
+
 <div id="contests">
   <% @contests.each do |contest| %>
     <%= render contest %>
@@ -11,4 +16,4 @@
   <% end %>
 </div>
 
-<%= link_to "New contest", new_contest_path %>
+

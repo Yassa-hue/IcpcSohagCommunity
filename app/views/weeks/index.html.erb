@@ -2,6 +2,11 @@
 
 <h1>Weeks</h1>
 
+
+<% if is_board? %>
+  <%= link_to "New week", new_week_path %>
+<% end %>
+
 <div id="weeks">
   <% @weeks.each do |week| %>
     <%= render week %>
@@ -11,4 +16,4 @@
   <% end %>
 </div>
 
-<%= link_to "New week", new_week_path %>
+

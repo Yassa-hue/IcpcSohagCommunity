@@ -2,6 +2,10 @@
 
 <h1>Users</h1>
 
+<% if is_board? %>
+  <%= link_to "New user", new_user_path %>
+<% end %>
+
 <div id="users">
   <% @users.each do |user| %>
     <%= render user %>
@@ -11,4 +15,4 @@
   <% end %>
 </div>
 
-<%= link_to "New user", new_user_path %>
+

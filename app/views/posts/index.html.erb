@@ -2,6 +2,9 @@
 
 <h1>Posts</h1>
 
+<% if is_board? %>
+  <%= link_to "New post", new_post_path %>
+<% end %>
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
@@ -10,5 +13,3 @@
     </p>
   <% end %>
 </div>
-
-<%= link_to "New post", new_post_path %>

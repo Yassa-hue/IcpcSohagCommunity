@@ -33,7 +33,12 @@
 
   <div>
     <%= form.label :role, style: "display: block" %>
-    <%= form.text_field :role %>
+    <%= form.radio_button :role, "Trainee" %>
+    <%= form.label :role_trainee, "Trainee" %>
+    <%= form.radio_button :role, "Coach" %>
+    <%= form.label :role_coach, "Coach" %>
+    <%= form.radio_button :role, "Board" %>
+    <%= form.label :role_board, "Board" %>
   </div>
 
   <div>

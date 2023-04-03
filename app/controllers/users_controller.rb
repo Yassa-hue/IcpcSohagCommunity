@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :require_login, all: true
 
   # No edit unless you are a board
-  before_action :require_board, %i[ new create edit update destroy ]
+  before_action :require_board, only: %i[ new create edit update destroy ]
 
   # GET /users or /users.json
   def index

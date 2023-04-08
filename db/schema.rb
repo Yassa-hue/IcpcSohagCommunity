@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_02_133742) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_05_180516) do
   create_table "contests", force: :cascade do |t|
     t.string "name"
     t.string "link"
@@ -28,6 +28,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_133742) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "practices", force: :cascade do |t|
+    t.integer "trainee_id", null: false
+    t.integer "contest_id", null: false
+    t.integer "problems"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contest_id"], name: "index_practices_on_contest_id"
+    t.index ["trainee_id"], name: "index_practices_on_trainee_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -65,6 +75,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_133742) do
 
   add_foreign_key "contests", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "practices", "contests"
+  add_foreign_key "practices", "users", column: "trainee_id"
   add_foreign_key "tasks", "users", column: "coach_id"
   add_foreign_key "tasks", "users", column: "trainee_id"
   add_foreign_key "weeks", "users"

@@ -64,6 +64,7 @@
     <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.2, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.18.0, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="msgpack (v1.7.0, ruby-3.2.1-p31) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-http (v0.3.2, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-imap (v0.3.4, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-pop (v0.1.2, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-smtp (v0.3.3, ruby-3.2.1-p31) [gem]" level="application" />
@@ -92,6 +93,7 @@
     <orderEntry type="library" scope="PROVIDED" name="timeout (v0.3.2, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v1.4.0, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, ruby-3.2.1-p31) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="uri (v0.12.0, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v4.2.0, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="webdrivers (v5.2.0, ruby-3.2.1-p31) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket (v1.2.9, ruby-3.2.1-p31) [gem]" level="application" />

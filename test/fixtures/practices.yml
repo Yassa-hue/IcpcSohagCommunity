@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trainer_id: one
+  contest_id: one
+  problems: 1
+
+two:
+  trainer_id: two
+  contest_id: two
+  problems: 1

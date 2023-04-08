@@ -1,0 +1,32 @@
+<%= form_with(model: practice) do |form| %>
+  <% if practice.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(practice.errors.count, "error") %> prohibited this practice from being saved:</h2>
+
+      <ul>
+        <% practice.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :trainer_id_id, style: "display: block" %>
+    <%= form.text_field :trainer_id_id %>
+  </div>
+
+  <div>
+    <%= form.label :contest_id_id, style: "display: block" %>
+    <%= form.text_field :contest_id_id %>
+  </div>
+
+  <div>
+    <%= form.label :problems, style: "display: block" %>
+    <%= form.number_field :problems %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

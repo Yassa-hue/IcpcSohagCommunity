@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :logged_in?, :is_board?, :is_coach?,:current_user_id, :current_user_name
+  helper_method :logged_in?, :is_trainee?, :is_board?, :is_coach?,:current_user_id, :current_user_name
 
   def current_user_name
     session[:user_name]
@@ -11,6 +11,11 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !!session[:user_id]
+  end
+
+
+  def is_trainee?
+    logged_in? && session[:user_role] == "Trainee"
   end
 
   def is_coach?

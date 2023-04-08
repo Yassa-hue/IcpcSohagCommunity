@@ -12,4 +12,8 @@ class User < ApplicationRecord
 
 
   has_many :tasks
+
+  # A practice is tracking how much problems this trainee solved from a particular contest.
+  # This record it updated AUTOMATICALLY using codeforces api.
+  has_many :practices, foreign_key: "trainee_id"
 end

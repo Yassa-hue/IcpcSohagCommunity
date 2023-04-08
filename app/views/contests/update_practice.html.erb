@@ -1,0 +1,22 @@
+<%= form_with(url: update_practice_system_path) do |form| %>
+
+  <div>
+    <%= form.label :api_key, style: "display: block" %>
+    <%= form.text_field :api_key %>
+  </div>
+
+  <div>
+    <%= form.label :api_secret, style: "display: block" %>
+    <%= form.text_field :api_secret %>
+  </div>
+
+  <% @contests.each do |contest| %>
+    <%= check_box_tag 'contests_ids[]', contest.link %>
+    <%= contest.name %>
+    <br>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

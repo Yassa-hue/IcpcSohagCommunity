@@ -35,6 +35,15 @@ class ContestsController < ApplicationController
 
     respond_to do |format|
       if @contest.save
+        # get all the Trainees ids
+        trainees_ids = User.where(role: "Trainee").pluck :id
+
+        # create a practice record for each user
+        trainees_ids.each do | trainee_id |
+          Practice.new contest: @contest.id, trainee: trainee_id, problems: 0
+        end
+
+
         format.html { redirect_to contest_url(@contest), notice: "Contest was successfully created." }
         format.json { render :show, status: :created, location: @contest }
       else
@@ -42,6 +51,14 @@ class ContestsController < ApplicationController
         format.json { render json: @contest.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+
+
+
+  def update_practice
+    @contests = Contest.all
+    render :update_practice
   end
 
   # PATCH/PUT /contests/1 or /contests/1.json

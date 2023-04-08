@@ -29,8 +29,24 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+
+
+
     respond_to do |format|
       if @user.save
+        # get the contests ids
+        contests = Contest.pluck :id
+
+        puts "--------------------------------", contests
+
+        # create a practice record for each contest
+        contests.each do | contest |
+          puts "***************** creating a practice"
+          practice = Practice.new contest_id: contest, trainee_id: @user.id, problems: 0
+          practice.save
+        end
+
+
         format.html { redirect_to user_url(@user), notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else

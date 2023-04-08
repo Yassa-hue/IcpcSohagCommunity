@@ -29,4 +29,18 @@
     <%= user.title %>
   </p>
 
+  <% if user.role == "Trainee" %>
+    <p>
+      <strong>Practice:</strong>
+      <% user.practices.each do |practice| %>
+        <p>
+          Contest : <%= practice.contest.name %>
+        </p>
+        <p>
+          Solved problems : <%= practice.problems %>
+        </p>
+      <% end %>
+    </p>
+  <% end %>
+
 </div>

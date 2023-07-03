@@ -3,6 +3,7 @@ require "test_helper"
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
+    require_login login_path, @user.email, '12345678'
   end
 
   test "should get index" do

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :practices
   get 'contests/update_practice', as: "update_practice_page"
   post 'practices/update_all_practice_system', as: "update_practice_system"
   get 'achievements/index', as: 'achs'

@@ -14,9 +14,8 @@ class PracticesTest < ApplicationSystemTestCase
     visit practices_url
     click_on "New practice"
 
-    fill_in "Contest id", with: @practice.contest_id_id
+    fill_in "Contest id", with: @practice.contest_id
     fill_in "Problems", with: @practice.problems
-    fill_in "Trainer id", with: @practice.trainer_id_id
     click_on "Create Practice"
 
     assert_text "Practice was successfully created"
@@ -27,9 +26,8 @@ class PracticesTest < ApplicationSystemTestCase
     visit practice_url(@practice)
     click_on "Edit this practice", match: :first
 
-    fill_in "Contest id", with: @practice.contest_id_id
+    fill_in "Contest id", with: @practice.contest_id
     fill_in "Problems", with: @practice.problems
-    fill_in "Trainer id", with: @practice.trainer_id_id
     click_on "Update Practice"
 
     assert_text "Practice was successfully updated"

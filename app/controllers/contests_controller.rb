@@ -36,11 +36,11 @@ class ContestsController < ApplicationController
     respond_to do |format|
       if @contest.save
         # get all the Trainees ids
-        trainees_ids = User.where(role: "Trainee").pluck :id
+        trainees_id = User.where(role: "Trainee").pluck(:id)
 
         # create a practice record for each user
-        trainees_ids.each do | trainee_id |
-          Practice.new contest: @contest.id, trainee: trainee_id, problems: 0
+        trainees_id.each do | trainee_id |
+          Practice.new contest: @contest, trainee_id: trainee_id, problems: 0
         end
 
 
